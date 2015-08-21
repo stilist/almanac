@@ -1,0 +1,40 @@
+@import 'styles/mixins/colors';
+
+$height: 250px;
+$width: 250px;
+$okta_radius: 20px;
+
+.windBarb,
+.windBarb-canvas {
+  height: $height;
+  width: $width;
+}
+.windBarb {
+  position: relative;
+}
+.windBarb-calm {
+  fill: none;
+  stroke-width: 2px;
+  stroke: $color-n1;
+}
+.windBarb-dot {
+  fill: $color-n1;
+}
+.windBarb-barb {}
+.windBarb-shaft {
+  stroke-width: 3px;
+  stroke: $color-n1;
+}
+.windBarb-flag {
+  stroke-width: 3px;
+  stroke: $color-n1;
+}
+.windBarb-pennant {
+  fill: $color-n1;
+}
+
+.windBarb .okta {
+  left: ($height / 2) - $okta_radius;
+  position: absolute;
+  top: ($height / 2) - $okta_radius;
+}

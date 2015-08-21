@@ -1,0 +1,28 @@
+@import 'styles/mixins/colors';
+
+.okta {
+  position: relative;
+}
+.okta-ring {
+  fill: none;
+  stroke: $color-n1;
+  stroke-width: 2px;
+}
+.okta-symbol {
+  clip-path: url(#okta-clip);
+}
+.okta-symbol.is-hidden {
+  display: none;
+}
+.okta-arc {
+  fill: $color-n1;
+}
+.okta-line {
+  stroke-width: 2px;
+  stroke: $color-n1;
+}
+
+.okta-symbol--7 .okta-line {
+  stroke-width: 10px;
+  stroke: $color-n10;
+}

@@ -3,7 +3,15 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    dotEnv: {
+      clientAllowedKeys: ['FORECAST_API_KEY']
+    },
+
+    sassOptions: {
+      includePaths: [
+        'app'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -18,6 +26,10 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+
+  app.import(app.bowerDirectory + '/d3-transform/src/d3-transform.js', {
+    'd3Transform': ['d3Transform']
+  });
 
   return app.toTree();
 };

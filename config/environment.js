@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-test',
+    modulePrefix: 'almanac',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -11,6 +11,13 @@ module.exports = function(environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
+    },
+
+    FORECAST_API_KEY: process.env.FORECAST_API_KEY,
+
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://api.forecast.io",
+      'script-src': "'self' https://api.forecast.io"
     },
 
     APP: {

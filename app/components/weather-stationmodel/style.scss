@@ -1,0 +1,31 @@
+@import 'styles/mixins/colors';
+
+.stationModel {
+  color: $color-n1;
+  height: 250px;
+  position: relative;
+  width: 250px;
+}
+.stationModel-dewPoint,
+.stationModel-pressure,
+.stationModel-temperature,
+.stationModel-visibility {
+  position: absolute;
+  text-align: center;
+}
+.stationModel-dewPoint {
+  left: 25%;
+  top: 65%;
+}
+.stationModel-pressure {
+  left: 65%;
+  top: 30%;
+}
+.stationModel-temperature {
+  left: 25%;
+  top: 30%;
+}
+.stationModel-visibility {
+  left: 15%;
+  top: 47%;
+}

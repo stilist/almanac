@@ -1,0 +1,11 @@
+@import 'pods';
+@import 'mixins/colors';
+
+body {
+  background-color: $color-n5;
+  margin: 0;
+  padding: 0;
+}
+svg {
+  transform: translate(0, 0);
+}
