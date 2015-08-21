@@ -22,6 +22,8 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
+* Register a [Dark Sky Forecast API key](https://developer.forecast.io/)
+* Add `.env` file in the project’s root directory containing `FORECAST_API_KEY=<foo>`, where `<foo>` is the key from the previous step.
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4100).
 
