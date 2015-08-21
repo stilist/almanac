@@ -11,27 +11,27 @@ export default Ember.Component.extend({
   classNames: ['stationModel'],
 
   currently: Ember.computed('data', 'id', function () {
-    return this.get('data').get('currently');
+    return this.get('data.currently');
   }),
 
   dewPoint: Ember.computed('currently', function () {
-    const dewPoint = this.get('currently').get('dewPoint');
+    const dewPoint = this.get('currently.dewPoint');
 
     return ~~(celcius2fahrenheit(dewPoint));
   }),
   pressure: Ember.computed('currently', function () {
-    const pressure = ~~(this.get('currently').get('pressure') * 10);
+    const pressure = ~~(this.get('currently.pressure') * 10);
     const truncated = (pressure + '').replace(/^(9|10)/, '');
 
     return truncated;
   }),
   temperature: Ember.computed('currently', function () {
-    const temperature = this.get('currently').get('temperature');
+    const temperature = this.get('currently.temperature');
 
     return ~~(celcius2fahrenheit(temperature));
   }),
   visibility: Ember.computed('currently', function () {
-    const visibility = this.get('currently').get('visibility');
+    const visibility = this.get('currently.visibility');
     const converted = kilometers2miles(visibility);
 
     return (converted > 1) ? Math.round(converted) : converted;
@@ -39,16 +39,16 @@ export default Ember.Component.extend({
 
   // TODO remove when the model is figured out v
   windBearing: Ember.computed('currently', function () {
-    return this.get('currently').get('windBearing');
+    return this.get('currently.windBearing');
   }),
   windSpeed: Ember.computed('currently', function () {
-    const speed_mps = this.get('currently').get('windSpeed');
+    const speed_mps = this.get('currently.windSpeed');
 
     // convert from M/s to knots
     return speed_mps * 1.94;
   }),
   cloudCover: Ember.computed('currently', function () {
-    let cover = Math.round(this.get('currently').get('cloudCover') * 10);
+    let cover = Math.round(this.get('currently.cloudCover') * 10);
     cover = Math.min(cover, 9);
 
     return cover;
