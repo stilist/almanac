@@ -17,7 +17,6 @@ export default DS.RESTAdapter.extend({
     return `${this.get('host')}/${this.get('namespace')}/${id}?units=si`;
   },
 
-  // TODO can maybe handle this in the serializer's `normalize`?
   handleResponse: function (status, headers, payload) {
     if (this.isSuccess(status, headers, payload)) {
       payload.id = `${payload.latitude},${payload.longitude}`;
