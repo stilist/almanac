@@ -1,7 +1,9 @@
 @import 'pods';
 @import 'mixins/colors';
+@import 'mixins/text';
 
 body {
+  @include text-primary;
   background-color: $color-n5;
   margin: 0;
   padding: 0;

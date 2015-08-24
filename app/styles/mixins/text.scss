@@ -1,0 +1,27 @@
+@mixin _textSize-base {font-weight:400;}
+@mixin textSize-base11 {@include _textSize-base; font-size:11px;}
+@mixin textSize-base12 {@include _textSize-base; font-size:12px;}
+@mixin textSize-base13 {@include _textSize-base; font-size:13px;}
+@mixin textSize-base14 {@include _textSize-base; font-size:14px;}
+
+@mixin _textSize-header {font-weight:400;}
+@mixin textSize-header15 {@include _textSize-header; font-size:15px;}
+@mixin textSize-header17 {@include _textSize-header; font-size:17px;}
+
+@mixin _textSize-caps {font-weight:700; text-transform:uppercase;}
+@mixin textSize-caps9 {@include _textSize-caps; font-size:9px;}
+@mixin textSize-caps10 {@include _textSize-caps; font-size:10px;}
+@mixin textSize-caps11 {@include _textSize-caps; font-size:11px;}
+
+// light
+@mixin textStyle-n3 {font-style:normal; font-weight:300;}
+// regular
+@mixin textStyle-n4 {font-style:normal; font-weight:400;}
+// semibold
+@mixin textStyle-n6 {font-style:normal; font-weight:600;}
+// bold
+@mixin textStyle-n7 {font-style:normal; font-weight:700;}
+
+@mixin text-primary {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
