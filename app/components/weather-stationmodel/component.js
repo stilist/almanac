@@ -10,8 +10,8 @@ function kilometers2miles(distance) {
 export default Ember.Component.extend({
   classNames: ['stationModel'],
 
-  currently: Ember.computed('data', 'id', function () {
-    return this.get('data.currently');
+  currently: Ember.computed('forecast', 'id', function () {
+    return this.get('forecast.currently');
   }),
 
   dewPoint: Ember.computed('currently', function () {

@@ -1,5 +1,24 @@
 /* jshint node: true */
 
+const data_apis = [
+  {
+    env: ['FORECAST_API_KEY'],
+    host: 'https://api.forecast.io'
+  },
+  {
+    env: ['OPENWEATHERMAP_API_KEY'],
+    host: 'http://api.openweathermap.org'
+  }
+];
+
+var csp_domains = ["'self'"];
+for (var data_api of data_apis) {
+  if (data_api.host) {
+    csp_domains.push(data_api.host);
+  }
+}
+csp_domains = csp_domains.join(' ');
+
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'almanac',
@@ -13,11 +32,9 @@ module.exports = function(environment) {
       }
     },
 
-    FORECAST_API_KEY: process.env.FORECAST_API_KEY,
-
     contentSecurityPolicy: {
-      'connect-src': "'self' https://api.forecast.io",
-      'script-src': "'self' https://api.forecast.io"
+      'connect-src': csp_domains,
+      'script-src': csp_domains
     },
 
     APP: {
@@ -25,6 +42,16 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+
+  for (var data_api of data_apis) {
+    if (!data_api.env) {
+      return;
+    }
+
+    for (var env_var of data_api.env) {
+      ENV[env_var] = process.env[env_var];
+    }
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

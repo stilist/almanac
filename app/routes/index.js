@@ -16,9 +16,12 @@ export default Ember.Route.extend({
 
   model() {
     const forecast = this.store.findRecord('forecast', coords.join(','));
+    const openweathermap = this.store.findRecord('openweathermap',
+        coords.join(','));
 
-    return {
-      forecast: forecast
-    };
+    return Ember.RSVP.hash({
+      forecast: forecast,
+      openweathermap: openweathermap
+    });
   }
 });

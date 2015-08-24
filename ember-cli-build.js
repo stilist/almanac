@@ -4,7 +4,9 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     dotEnv: {
-      clientAllowedKeys: ['FORECAST_API_KEY']
+      clientAllowedKeys: [
+        'FORECAST_API_KEY', 'OPENWEATHERMAP_API_KEY'
+      ]
     },
 
     sassOptions: {

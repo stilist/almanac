@@ -22,8 +22,10 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* Register a [Dark Sky Forecast API key](https://developer.forecast.io/)
-* Add `.env` file in the project’s root directory containing `FORECAST_API_KEY=<foo>`, where `<foo>` is the key from the previous step.
+* Add `.env` file in the project’s root directory.
+* Add API keys to `.env`:
+  * `FORECAST_API_KEY=<key>` ([Dark Sky Forecast API](https://developer.forecast.io/))
+  * `OPENWEATHERMAP_API_KEY=<key>` ([OpenWeatherMap](http://openweathermap.org/register))
 * `ember server`
 * Visit your app at [http://localhost:4100](http://localhost:4100).
 
