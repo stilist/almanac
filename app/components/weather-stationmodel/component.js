@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import _ from 'lodash/collection';
+import d3 from 'd3';
 
 function celcius2fahrenheit(temperature) {
   return (temperature * 1.8) + 32;
@@ -48,10 +50,22 @@ export default Ember.Component.extend({
     return speed_mps * 1.94;
   }),
   cloudCover: Ember.computed('currently', function () {
-    let cover = Math.round(this.get('currently.cloudCover') * 10);
-    cover = Math.min(cover, 9);
+    const conditions_items = this.get('openweathermap.weather');
+    const conditions = conditions_items.map(item => item.get('description'));
+    const obscured = _.contains(conditions, 'haze', 'smoke');
 
-    return cover;
+    if (obscured) {
+      return 9;
+    }
+
+    let cover = Math.round(this.get('currently.cloudCover') * 10);
+
+    const scale = d3.scale.linear();
+    scale.domain([0, 10]);
+    scale.range([0, 8]);
+    const scaled = Math.round(scale(cover));
+
+    return scaled;
   })
   // TODO remove when the model is figured out ^
 });
