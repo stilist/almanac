@@ -24,6 +24,7 @@ You will need the following things properly installed on your computer.
 
 * Add `.env` file in the project’s root directory.
 * Add API keys to `.env`:
+  * `AERIS_API_KEY=<client_id>` / `AERIS_API_SECRET=<client_secret>` ([AerisWeather](http://www.aerisweather.com/signup/); choose ‘API Developer’, then add an app)
   * `FORECAST_API_KEY=<key>` ([Dark Sky Forecast API](https://developer.forecast.io/))
   * `OPENWEATHERMAP_API_KEY=<key>` ([OpenWeatherMap](http://openweathermap.org/register))
 * `ember server`

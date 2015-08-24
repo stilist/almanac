@@ -15,11 +15,13 @@ export default Ember.Route.extend({
   },
 
   model() {
+    const aerisweather_fires = this.store.findRecord('aerisweatherfire', coords.join(','));
     const forecast = this.store.findRecord('forecast', coords.join(','));
     const openweathermap = this.store.findRecord('openweathermap',
         coords.join(','));
 
     return Ember.RSVP.hash({
+      aerisweather_fires: aerisweather_fires,
       forecast: forecast,
       openweathermap: openweathermap
     });

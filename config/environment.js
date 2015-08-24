@@ -2,6 +2,10 @@
 
 const data_apis = [
   {
+    env: ['AERIS_API_KEY', 'AERIS_API_SECRET'],
+    host: 'http://api.aerisapi.com'
+  },
+  {
     env: ['FORECAST_API_KEY'],
     host: 'https://api.forecast.io'
   },

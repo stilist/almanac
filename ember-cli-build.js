@@ -6,7 +6,8 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     dotEnv: {
       clientAllowedKeys: [
-        'FORECAST_API_KEY', 'OPENWEATHERMAP_API_KEY'
+        'AERIS_API_KEY', 'AERIS_API_SECRET', 'FORECAST_API_KEY',
+        'OPENWEATHERMAP_API_KEY'
       ]
     },
 
