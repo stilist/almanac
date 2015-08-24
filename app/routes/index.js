@@ -9,8 +9,8 @@ export default Ember.Route.extend({
       return;
     }
 
-    if (models.forecast) {
-      controller.set('forecast_model', models.forecast);
+    for (let key of Object.keys(models)) {
+      controller.set(`${key}_model`, models[key]);
     }
   },
 
