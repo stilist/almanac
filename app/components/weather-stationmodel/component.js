@@ -16,6 +16,11 @@ export default Ember.Component.extend({
     return this.get('forecast.currently');
   }),
 
+  currentConditions: Ember.computed('currently', function () {
+    const data = this.get('openweathermap.weather');
+
+    return data.map(condition => condition.get('description'));
+  }),
   dewPoint: Ember.computed('currently', function () {
     const dewPoint = this.get('currently.dewPoint');
 

@@ -1,5 +1,6 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Funnel = require('broccoli-funnel');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -33,5 +34,11 @@ module.exports = function(defaults) {
     'd3Transform': ['d3Transform']
   });
 
-  return app.toTree();
+  var weather_symbols = new Funnel('bower_components/weather-symbols', {
+    srcDir: '/symbols',
+    include: ['**/*.svg'],
+    destDir: '/assets/images/weather-symbols/'
+  });
+
+  return app.toTree(weather_symbols);
 };

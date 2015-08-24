@@ -14,6 +14,7 @@
     "qunit": "~1.18.0",
     "d3": "~3.5.0",
     "d3-transform": "*",
-    "ember-data.model-fragments": "~0.4.0"
+    "ember-data.model-fragments": "~0.4.0",
+    "weather-symbols": "OGCMetOceanDWG/WorldWeatherSymbols#~0.7.0"
   }
 }
