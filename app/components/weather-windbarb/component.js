@@ -2,7 +2,6 @@ import Ember from 'ember';
 import d3 from 'd3';
 
 const canvas_size = 250;
-const calm_radius = ~~(canvas_size / 50) + 5;
 const center = ~~(canvas_size / 2);
 const line_length = ~~(canvas_size / 2.5);
 const full_flag_length = ~~(line_length / 5);
@@ -159,7 +158,7 @@ export default Ember.Component.extend({
       class: 'windBarb-calm',
       cx: center + 1,
       cy: center + 1,
-      r: calm_radius
+      r: this.get('oktaRadius') * 1.3
     });
   }
 });
